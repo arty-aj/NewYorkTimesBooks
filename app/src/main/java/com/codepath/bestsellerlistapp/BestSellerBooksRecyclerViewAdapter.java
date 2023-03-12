@@ -1,6 +1,9 @@
 package com.codepath.bestsellerlistapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +38,8 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     }
 
     @Override
-    public void onBindViewHolder(final BookViewHolder holder, int position) {
+    public void onBindViewHolder(final BookViewHolder holder, final int position) {
+        BestSellerBook bestSellerBook = books.get(position);
         holder.mItem = books.get(position);
         holder.mBookTitle.setText(books.get(position).title);
         holder.mBookAuthor.setText(books.get(position).author);
@@ -43,16 +47,19 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
                 .load(books.get(position).bookImageUrl)
                 .into(holder.bookImage);
         holder.bookDescription.setText(books.get(position).description);
-        // TODO Rank not working
-        //holder.ranking.setText(books.get(position).rank);
 
         holder.buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Uri uri = Uri.parse("http://www.example.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 Toast.makeText(view.getContext(), "Button clicked",
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        @SuppressLint("DefaultLocale") String ranking = String.format("%d", bestSellerBook.rank);
+        holder.ranking.setText(ranking);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
