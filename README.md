@@ -2,13 +2,9 @@
 
 This app uses New York Times API in order to show the best selling books.
 
-User is able to scroll thorugh app seamlessly and see the top selling books 
+User is able to scroll thorugh app seamlessly and see the top selling books.
 
-<GIF here>
-
-
-
-
+![NewYorkTImesBooks](https://user-images.githubusercontent.com/88049900/224526669-a6533f3d-b2f2-4819-8fe4-460849eb6410.gif)
 
 Important tools used:
 
