@@ -1,3 +1,17 @@
-## Lab 1 - UI and Git Lab
+## New Yort Times 
 
-This is the starter code for lab 1, see [Android University Course - Lab 1](https://courses.codepath.org/courses/android_university/unit/1#!exercises) for additional instructions.
+This app uses New York Times API in order to show the best selling books.
+
+User is able to scroll thorugh app seamlessly and see the top selling books 
+
+<GIF here>
+
+
+
+
+
+Important tools used:
+
+https://github.com/bumptech/glide - Used to load images 
+
+https://developer.nytimes.com/ - Created an API to use for best selling books
